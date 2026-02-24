@@ -6,6 +6,7 @@ import { schemaTypes } from "@/sanity/schemas";
 export default defineConfig({
   name: "scopezero-marketing",
   title: "ScopeZero Marketing",
+  basePath: "/studio",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "tfk0lw07",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
   plugins: [structureTool(), visionTool()],
