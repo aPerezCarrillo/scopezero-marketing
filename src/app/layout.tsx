@@ -57,7 +57,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           footerCopy={settings?.footerCopy}
           linkedinUrl={settings?.linkedinUrl}
         />
-        {isDraftMode && <VisualEditing />}
+        {isDraftMode && (
+          <VisualEditing zIndex={9999} />
+        )}
       </body>
     </html>
   );
