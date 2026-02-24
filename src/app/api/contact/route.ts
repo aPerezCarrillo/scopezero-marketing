@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from:     process.env.RESEND_FROM ?? "website@scopezer0.com",
-        to:       [process.env.CONTACT_EMAIL_TO!],
+        to:       (process.env.CONTACT_EMAIL_TO ?? "").split(",").map(e => e.trim()).filter(Boolean),
         reply_to: `${name} <${email}>`,
         subject:  `New enquiry from ${name} — ${who}`,
         html: `
