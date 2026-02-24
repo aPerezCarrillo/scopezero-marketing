@@ -43,6 +43,13 @@ export const siteSettings = defineType({
       type: "string",
       description: "Shown at the bottom of every page (e.g. © 2025 ScopeZero. Carbon emission data made easy.)",
     }),
+    defineField({
+      name: "ogImage",
+      title: "Social Preview Image",
+      type: "image",
+      description: "Image shown when the site is shared on LinkedIn, Twitter, etc. Recommended: 1200×630px",
+      options: { hotspot: true },
+    }),
   ],
   preview: { select: { title: "logoText" } },
 });

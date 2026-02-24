@@ -1,4 +1,4 @@
-import { sanityFetch } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/fetch";
 import { HOME_PAGE_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
 import { Hero }         from "@/components/home/Hero";
 import { Products }     from "@/components/home/Products";

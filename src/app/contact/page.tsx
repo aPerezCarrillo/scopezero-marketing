@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { sanityFetch } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/fetch";
 import { CONTACT_PAGE_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
 import { ContactForm } from "@/components/contact/ContactForm";
 

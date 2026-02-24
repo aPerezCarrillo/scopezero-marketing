@@ -91,6 +91,13 @@ export const homePage = defineType({
             defineField({ name: "ctaUrl",      title: "Button URL",           type: "url",     description: "Leave empty to disable the button" }),
             defineField({ name: "badge",       title: "Badge",                type: "string",  description: "Small label on the card corner (e.g. Coming Soon) — leave empty to hide" }),
             defineField({ name: "highlight",   title: "Highlight this card?", type: "boolean", description: "Makes this card visually prominent" }),
+            defineField({
+              name: "image",
+              title: "Card Image",
+              type: "image",
+              description: "Optional illustration or screenshot for the product card",
+              options: { hotspot: true },
+            }),
           ],
           preview: {
             select: { title: "title", subtitle: "description" },

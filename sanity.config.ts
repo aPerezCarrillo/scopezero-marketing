@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { presentationTool } from "@sanity/presentation";
 import {
   CogIcon,
   HomeIcon,
@@ -8,6 +9,8 @@ import {
   TagIcon,
 } from "@sanity/icons";
 import { schemaTypes } from "./src/sanity/schemas";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scope-zero-web-site.vercel.app";
 
 export default defineConfig({
   name: "scopezero-marketing",
@@ -72,6 +75,16 @@ export default defineConfig({
                   .title("Pricing Page"),
               ),
           ]),
+    }),
+
+    // ── Live preview panel ───────────────────────────────────────────────────
+    presentationTool({
+      name: "preview",
+      title: "Preview",
+      previewUrl: {
+        origin: siteUrl,
+        draftMode: { enable: `${siteUrl}/api/draft-mode/enable` },
+      },
     }),
   ],
   schema: { types: schemaTypes },

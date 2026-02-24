@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { sanityFetch } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/fetch";
 import { ABOUT_PAGE_QUERY } from "@/sanity/queries";
 import { AboutContent } from "@/components/about/AboutContent";
 

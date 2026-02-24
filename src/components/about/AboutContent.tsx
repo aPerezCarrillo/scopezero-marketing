@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import Image from "next/image";
+import { urlFor } from "@/sanity/image";
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 28 },
@@ -12,7 +14,8 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-interface TeamMember { name: string; role: string; bio: string; linkedin?: string; }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface TeamMember { name: string; role: string; bio: string; linkedin?: string; photo?: any; }
 
 interface AboutContentProps {
   heroTitle?:    string;
@@ -92,6 +95,18 @@ export function AboutContent({
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {teamMembers.map((member) => (
                   <motion.div key={member.name} variants={fadeUp} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                    {/* Photo */}
+                    {member.photo && (
+                      <div className="mb-4">
+                        <Image
+                          src={urlFor(member.photo).width(120).height(120).fit("crop").url()}
+                          alt={member.name}
+                          width={60}
+                          height={60}
+                          className="rounded-full object-cover border border-white/10"
+                        />
+                      </div>
+                    )}
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <div className="font-semibold text-white">{member.name}</div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { sanityFetch } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/fetch";
 import { PRICING_PAGE_QUERY } from "@/sanity/queries";
 import { PricingPlaceholder } from "@/components/pricing/PricingPlaceholder";
 
